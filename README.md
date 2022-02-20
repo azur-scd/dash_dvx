@@ -3,9 +3,13 @@
 ![forthebadge](./made-with-dash-component-boilerplate.svg)
 
 dash_dvx is a Dash component library.
-This module is as simple and basic wrapper for the DevExtreme UI components library, complete DevExtreme demos are available here [https://js.devexpress.com/Demos/WidgetsGallery/](https://js.devexpress.com/Demos/WidgetsGallery/)
-The dash component was quickly developed for a need in another project, so for the moment the component is quite basic and integrates only two kinds of devextreme UI components : the Data Grid and the tree List.
-Some of the most important DevExtreme features are intergrated by default (paginf, filtering, export, selection...), see below the details of the Grid and List dash component configuration.
+
+This module is as simple and basic wrapper for the DevExtreme UI components library. Complete DevExtreme demos are available here [https://js.devexpress.com/Demos/WidgetsGallery/](https://js.devexpress.com/Demos/WidgetsGallery/)
+
+This dash component was quickly developed for a need in another project, so for the moment the component is quite basic and integrates only two kinds of devextreme UI components : the Data Grid and the tree List.
+
+Some of the most important DevExtreme features are integrated by default (paging, filtering, export, selection...), see below the details of the Grid and List dash component configuration.
+
 
 ## Install
 
@@ -57,7 +61,9 @@ app = dash.Dash(
 | exportIsEnabled | Grid | (bool) enables an Excel export button above the DataGrid | Enabled by default | True/False | True
 | selectionMode | Grid | (string) enables the feature of selecting one single row or multiple rows using checkboxes  | Enabled by default | "single"/"multiple"/"none" | "multiple"
 | selectionIsRecursive | List | (bool) enables the feature of recursively selecting rows with their nested rows (parents and childs) | Enabled by default | True/False | True
-| selectionMode | List | (string) enables the feature of selecting one single row or multiple nested rows using checkboxes. If selectionIsRecursive is True, possible values are "all" to select all hierarchical ascnedants and descendants, or "leavesOnly" to select only child rows | Enabled by default | "signle"/"all"/"leavesOnly" | "leavesOnly"
+| selectionMode | List | (string) enables the feature of selecting one single row or multiple nested rows using checkboxes. If selectionIsRecursive is True, possible values are "all" to select all hierarchical ascnedants and descendants, or "leavesOnly" to select only child rows | Enabled by default | "single"/"all"/"leavesOnly" | "leavesOnly"
+
+To get the returned selected data in a dash app, you must call the property "selected_rows" associated to the html grid or list id (see below the examples)
 
 ### See in action
 

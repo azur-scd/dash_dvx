@@ -283,3 +283,9 @@ JuliaManifest.toml
 R
 src/jl
 src/DashDvx.jl
+.Rbuildignore
+
+# misc
+review_checklist.md
+deps
+inst
