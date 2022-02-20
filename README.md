@@ -63,7 +63,7 @@ app = dash.Dash(
 | selectionIsRecursive | List | (bool) enables the feature of recursively selecting rows with their nested rows (parents and childs) | Enabled by default | True/False | True
 | selectionMode | List | (string) enables the feature of selecting one single row or multiple nested rows using checkboxes. If selectionIsRecursive is True, possible values are "all" to select all hierarchical ascnedants and descendants, or "leavesOnly" to select only child rows | Enabled by default | "single"/"all"/"leavesOnly" | "leavesOnly"
 
-To get the returned selected data in a dash app, you must call the property "selected_rows" associated to the html grid or list id (see below the examples)
+To get the returned selected data in a dash app, you must call the property "selected_rows" associated to the html grid or list id (see below the examples or the usage.py file)
 
 ### See in action
 
@@ -334,11 +334,5 @@ If you have selected install_dependencies during the prompt, you can skip this p
     2. Tag your GitHub repository with the plotly-dash tag so that it appears here: https://github.com/topics/plotly-dash
     3. Create a post in the Dash community forum: https://community.plotly.com/c/dash
 
-## Usage
-
-| Syntax         | Description    | Test Text     |
-| :---           |    :----:      |          ---: |
-| Header         | Title          | Here's this   |
-| Paragraph      | Text           | And more      |
 
 
