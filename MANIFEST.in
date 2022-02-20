@@ -1,0 +1,11 @@
+include dash_dvx/dash_dvx.min.js
+include dash_dvx/dash_dvx.min.js.map
+include dash_dvx/async-*.js
+include dash_dvx/async-*.js.map
+include dash_dvx/*-shared.js
+include dash_dvx/*-shared.js.map
+include dash_dvx/metadata.json
+include dash_dvx/package-info.json
+include README.md
+include LICENSE
+include package.json

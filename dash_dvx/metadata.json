@@ -1,0 +1,355 @@
+{
+  "src/lib/components/Grid.react.js": {
+    "description": "",
+    "displayName": "Grid",
+    "methods": [
+      {
+        "name": "onExporting",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "dataSource": {
+        "type": {
+          "name": "array"
+        },
+        "required": true,
+        "description": "An key,value array of data to be displayed in the datagrid"
+      },
+      "columns": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "An array of columns config.\r\nObligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)\r\nOptionally fields are : width (number|auto), dataType (date|)\r\nEx : [{}]"
+      },
+      "keyExpr": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The dataField to be used as index|key."
+      },
+      "defaultPageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The number of items by page.",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
+      "pageSizeSelectorIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables de pages size selector (to choose the numbe rof displayed items by page)",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "allowedPageSizes": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Array of possible page size numbers"
+      },
+      "sortingMode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The type of sorting data (multiple|single).",
+        "defaultValue": {
+          "value": "\"multiple\"",
+          "computed": false
+        }
+      },
+      "searchPanelIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays the search panel above the datagrid (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerFilterIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays a filter search icon beside to the coumn label (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "filterRowIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays a filter search line under each column's label in teh datagrid (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "columnChooserIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables dataGrid column chooser widget (true|false).",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "selectionMode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Activate the feauture of row's selection (none|single|multiple).",
+        "defaultValue": {
+          "value": "'multiple'",
+          "computed": false
+        }
+      },
+      "selected_rows": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Array of selected items.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "exportIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "enable dataGrid export to Excel (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
+      }
+    }
+  },
+  "src/lib/components/List.react.js": {
+    "description": "",
+    "displayName": "List",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "dataSource": {
+        "type": {
+          "name": "array"
+        },
+        "required": true,
+        "description": "An key,value array of data to be displayed in the datagrid"
+      },
+      "keyExpr": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The dataField to be used as index|key."
+      },
+      "parentIdExpr": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The dataField to be used as the key to loop on to display the unflattes list."
+      },
+      "autoExpandAll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Deploys the item hierarchy (true|false)",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "pagingIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables the paging of results",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "defaultPageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The number of items by page.",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
+      "pageSizeSelectorIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables de pages size selector (to choose the numbe rof displayed items by page)",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "allowedPageSizes": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Array of possible page size numbers"
+      },
+      "sortingMode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The type of sorting data (multiple|single).",
+        "defaultValue": {
+          "value": "\"multiple\"",
+          "computed": false
+        }
+      },
+      "searchPanelIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays the search panel above the datagrid (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerFilterIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays a filter search icon beside to the coumn label (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "filterRowIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Displays a filter search line under each column's label in teh datagrid (true|false).",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "columnChooserIsEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables dataGrid column chooser widget (true|false).",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "selectionIsRecursive": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Recursively selects sub-items and parent itemsof a selected irow (true|false)",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "selectionMode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Configure the perimetre of itme selection (single|all|leavesOnly).",
+        "defaultValue": {
+          "value": "'leavesOnly'",
+          "computed": false
+        }
+      },
+      "selected_rows": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Array of selected items.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
+      }
+    }
+  }
+}
