@@ -1,7 +1,7 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
 import { List } from '../lib';
-import { tasks } from './data_list.js';
+import { tasks } from './data_example_list.js';
 
 const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
 
