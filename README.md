@@ -14,7 +14,7 @@ Some of the most important DevExtreme features are integrated by default (paging
 ## Install
 
 ```
-pip install dash_dvx
+pip install dash-dvx
 ```
 
 ## Usage
