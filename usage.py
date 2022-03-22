@@ -111,6 +111,28 @@ data =  [{
     "Task_Completion": 100,
     "Task_Parent_ID": 7,
   }]
+
+fields = [
+    {
+      "dataField": 'Product_ID',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Name',
+      "dataType": 'string'
+    }, {
+      "dataField": 'Product_Cost',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Sale_Price',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Retail_Price',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Current_Inventory',
+      "dataType": 'number'
+    },
+  ]
 #LAYOUT
 app.layout =  html.Div(children=[
         dvx.Grid(
@@ -136,6 +158,12 @@ app.layout =  html.Div(children=[
     html.H4("Selected data for the list"),
     html.P("(Only the child nodes of the selected items are returned, change selectionMode to 'all' if you want the parents nodes)"),
     html.Div(id='output_list'),
+     dvx.Filterbuilder(
+        id="fbuilder", 
+        fields=fields
+    ),
+    html.H4("Selected data for the Filterbuilder"),
+    html.Div(id='output_filterbuilder'),
     ])
 
 # CALLBACKS
@@ -152,6 +180,13 @@ def update_grid(selected_rows):
 )
 def update_list(selected_rows):
     return json.dumps(selected_rows)
+
+@app.callback(
+    Output('output_filterbuilder', 'children'),
+    Input('fbuilder', 'value'),
+)
+def update_filter(value):
+    return json.dumps(value)
 
 if __name__ == '__main__':
     app.run_server(debug=True)

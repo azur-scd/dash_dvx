@@ -1,4 +1,43 @@
 {
+  "src/lib/components/Filterbuilder.react.js": {
+    "description": "",
+    "displayName": "Filterbuilder",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "fields": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "An key,value array of datafield with at least a datafield key, example [{dataField: 'Name',}, {dataField: 'Price',dataType: 'number',format: 'currency',}, {dataField: 'Current_Inventory',dataType: 'number',caption: 'Inventory',}]"
+      },
+      "value": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "builded array of combined queries",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
+      }
+    }
+  },
   "src/lib/components/Grid.react.js": {
     "description": "",
     "displayName": "Grid",

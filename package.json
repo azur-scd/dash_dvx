@@ -1,6 +1,6 @@
 {
   "name": "dash_dvx",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A simple wrapper for the Devextreme js library of components",
   "repository": {
     "type": "git",
