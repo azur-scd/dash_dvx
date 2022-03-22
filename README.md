@@ -369,7 +369,7 @@ If you have selected install_dependencies during the prompt, you can skip this p
     See [PyPA](https://packaging.python.org/guides/distributing-packages-using-setuptools/#packaging-your-project)
     for more information.
 
-    *NB : the version number of the package (dist/dash_dvx-x.x.x-py3-none-any.whl) given by the setup.py file comes from the src/package.json file*
+    *Note : the version number of the package (dist/dash_dvx-x.x.x-py3-none-any.whl) given by the setup.py file comes from the src/package.json file*
 
 3. Test your tarball by copying it into a new environment and installing it locally:
     ```
