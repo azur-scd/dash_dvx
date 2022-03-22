@@ -6,7 +6,7 @@ dash_dvx is a Dash component library.
 
 This module is as simple and basic wrapper for the DevExtreme UI components library. Complete DevExtreme demos are available here [https://js.devexpress.com/Demos/WidgetsGallery/](https://js.devexpress.com/Demos/WidgetsGallery/)
 
-This dash component was quickly developed for a need in another project, so for the moment the component is quite basic and integrates only two kinds of devextreme UI components : the Data Grid and the tree List.
+This dash component was quickly developed for a need in another project, so for the moment the component is quite basic and integrates only three kinds of devextreme UI components : the Data Grid, the Tree List and the Filter Builder
 
 Some of the most important DevExtreme features are integrated by default (paging, filtering, export, selection...), see below the details of the Grid and List dash component configuration.
 
@@ -38,7 +38,7 @@ app = dash.Dash(
 )
 ```
 
-### Config (list of component attributes)
+### Config (list of component attributes for the Grid and List)
 
 
 | Syntax         | Used by component | Description    | Required/Enabled by default     | Possible values | Default values
@@ -239,7 +239,64 @@ if __name__ == '__main__':
     app.run_server(debug=True)
 ```
 
-## Developement
+### Filter Builder simple example
+
+```
+import dash
+from dash import html
+import dash_dvx as dvx
+import json
+
+app = dash.Dash(
+    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
+    external_stylesheets=["https://cdn3.devexpress.com/jslib/21.2.5/css/dx.common.css","https://cdn3.devexpress.com/jslib/21.2.5/css/dx.material.orange.dark.compact.css"]
+)
+
+#DATA
+fields = [
+    {
+      "dataField": 'Product_ID',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Name',
+      "dataType": 'string'
+    }, {
+      "dataField": 'Product_Cost',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Sale_Price',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Retail_Price',
+      "dataType": 'number'
+    }, {
+      "dataField": 'Product_Current_Inventory',
+      "dataType": 'number'
+    },
+  ]
+
+#LAYOUT
+ app.layout =  html.Div(children=[
+        dvx.Filterbuilder(
+        id="fbuilder", 
+        fields=fields
+    ),
+    html.Div(id='output')
+    ])
+
+# CALLBACKS
+@app.callback(
+    Output('output', 'children'),
+    Input('fbuilder', 'value'),
+)
+def update_filter(value):
+    return json.dumps(value) # the result of the component strictly follows that of the Filter Builder component of the Devextreme library, example [["Product_Cost", "<", 5000], "and", ["Product_Name", "contains", "tee-shirt"]]
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
+```
+
+## Development
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation
@@ -277,6 +334,9 @@ If you have selected install_dependencies during the prompt, you can skip this p
 ### Write your component code in `src/lib/components/DashDvx.react.js`.
 
 - The demo app is in `src/demo` and you will import your example component code into your demo app.
+- Run the demo code
+  - npm run start
+  - Open http://localhost:55555
 - Test your code in a Python environment:
     1. Build your code
         ```
@@ -308,6 +368,8 @@ If you have selected install_dependencies during the prompt, you can skip this p
     This will create source and wheel distribution in the generated the `dist/` folder.
     See [PyPA](https://packaging.python.org/guides/distributing-packages-using-setuptools/#packaging-your-project)
     for more information.
+
+    *Note : the version number of the package (dist/dash_dvx-x.x.x-py3-none-any.whl) given by the setup.py file comes from the src/package.json file*
 
 3. Test your tarball by copying it into a new environment and installing it locally:
     ```
