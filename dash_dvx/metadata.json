@@ -243,12 +243,19 @@
         "required": true,
         "description": "The dataField to be used as the key to loop on to display the unflattes list."
       },
+      "columns": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "An array of columns config.\r\nObligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)\r\nOptionally fields are : width (number|auto), dataType (date|)\r\nEx : [{}]"
+      },
       "autoExpandAll": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": "Deploys the item hierarchy (true|false)",
+        "description": "",
         "defaultValue": {
           "value": "true",
           "computed": false

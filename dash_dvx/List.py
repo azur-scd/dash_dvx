@@ -15,11 +15,16 @@ Keyword arguments:
 - allowedPageSizes (list; optional):
     Array of possible page size numbers.
 
-- autoExpandAll (boolean; default True):
-    Deploys the item hierarchy (True|False).
+- autoExpandAll (boolean; default True)
 
 - columnChooserIsEnabled (boolean; default False):
     Enables dataGrid column chooser widget (True|False).
+
+- columns (list; optional):
+    An array of columns config.  Obligatory fields are : dataField
+    (same as the dataSource array key), caption (the displayed column
+    label)  Optionally fields are : width (number|auto), dataType
+    (date|)  Ex : [{}].
 
 - dataSource (list; required):
     An key,value array of data to be displayed in the datagrid.
@@ -65,12 +70,12 @@ Keyword arguments:
 - sortingMode (string; default "multiple"):
     The type of sorting data (multiple|single)."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, keyExpr=Component.REQUIRED, parentIdExpr=Component.REQUIRED, autoExpandAll=Component.UNDEFINED, pagingIsEnabled=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionIsRecursive=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'dataSource', 'defaultPageSize', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
+    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, keyExpr=Component.REQUIRED, parentIdExpr=Component.REQUIRED, columns=Component.UNDEFINED, autoExpandAll=Component.UNDEFINED, pagingIsEnabled=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionIsRecursive=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
         self._type = 'List'
         self._namespace = 'dash_dvx'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'dataSource', 'defaultPageSize', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
+        self.available_properties = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

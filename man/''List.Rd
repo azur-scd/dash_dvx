@@ -11,7 +11,7 @@
 
 \usage{
 ''List(id=NULL, allowedPageSizes=NULL, autoExpandAll=NULL,
-columnChooserIsEnabled=NULL, dataSource=NULL,
+columnChooserIsEnabled=NULL, columns=NULL, dataSource=NULL,
 defaultPageSize=NULL, filterRowIsEnabled=NULL,
 headerFilterIsEnabled=NULL, keyExpr=NULL,
 pageSizeSelectorIsEnabled=NULL, pagingIsEnabled=NULL,
@@ -25,9 +25,14 @@ selectionMode=NULL, sortingMode=NULL)
 
 \item{allowedPageSizes}{Unnamed list. Array of possible page size numbers}
 
-\item{autoExpandAll}{Logical. Deploys the item hierarchy (true|false)}
+\item{autoExpandAll}{Logical. }
 
 \item{columnChooserIsEnabled}{Logical. Enables dataGrid column chooser widget (true|false).}
+
+\item{columns}{Unnamed list. An array of columns config.
+Obligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)
+Optionally fields are : width (number|auto), dataType (date|)
+Ex : [{}]}
 
 \item{dataSource}{Unnamed list. An key,value array of data to be displayed in the datagrid}
 

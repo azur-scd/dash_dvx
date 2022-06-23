@@ -151,6 +151,7 @@ app.layout =  html.Div(children=[
         dataSource=data,
         keyExpr= "Task_ID",
         parentIdExpr= "Task_Parent_ID",
+        columns = ['Task_ID','Task_Subject', 'Task_Start_Date', 'Task_Status'],
         filterRowIsEnabled= False, #if you don't want the row filter undre the header
         columnChooserIsEnabled= True, #if you want to have the ability to show/hide columns in the UI
         defaultPageSize= 25
