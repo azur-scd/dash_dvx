@@ -7,13 +7,14 @@ import TreeList, {
 export default class List extends Component {
 
   render() {
-    const { id, dataSource, keyExpr, parentIdExpr, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
+    const { id, dataSource, keyExpr, parentIdExpr, columns, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
     return (
       <TreeList
         id={id}
         dataSource={dataSource}
         keyExpr={keyExpr}
         parentIdExpr={parentIdExpr}
+        defaultColumns={columns}
         autoExpandAll={autoExpandAll}
         showBorders={true}
         columnAutoWidth={true}
@@ -71,6 +72,13 @@ List.propTypes = {
   /**
    * Deploys the item hierarchy (true|false)
    */
+   /**
+  * An array of columns config.
+  * Obligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)
+  * Optionally fields are : width (number|auto), dataType (date|)
+  * Ex : [{}]
+  */
+  columns: PropTypes.array,
   autoExpandAll: PropTypes.bool,
   /**
    * Enables the paging of results
