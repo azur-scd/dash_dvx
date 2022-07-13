@@ -1,9 +1,10 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
 import { Grid } from '../lib';
-import { customers } from './data_grid.js';
+import { customers } from './data_example_grid.js';
 
 const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
+const selectedRowKeys = [8,9]
 
 class App extends Component {
 
@@ -13,6 +14,7 @@ class App extends Component {
             dataSource: customers,
             columns: columns,
             keyExpr: "ID",
+            defaultSelectedRowKeys: selectedRowKeys,
             selected_rows:[]
         };
         this.setProps = this.setProps.bind(this);
@@ -31,6 +33,7 @@ class App extends Component {
                      dataSource={this.state.dataSource}
                      keyExpr={this.state.keyExpr}
                      defaultColumns={this.state.columns}  
+                     defaultSelectedRowKeys={this.state.defaultSelectedRowKeys}
                      selected_rows={this.state.selected_rows}  
                      setProps={this.setProps}               
                 />

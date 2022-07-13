@@ -84,6 +84,13 @@
         "required": false,
         "description": "The dataField to be used as index|key."
       },
+      "defaultSelectedRowKeys": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "The array of default selected row keys id."
+      },
       "defaultPageSize": {
         "type": {
           "name": "number"
@@ -250,12 +257,19 @@
         "required": false,
         "description": "An array of columns config.\r\nObligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)\r\nOptionally fields are : width (number|auto), dataType (date|)\r\nEx : [{}]"
       },
+      "defaultSelectedRowKeys": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "The array of default selected row keys id."
+      },
       "autoExpandAll": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Enables auto expand the tree",
         "defaultValue": {
           "value": "true",
           "computed": false

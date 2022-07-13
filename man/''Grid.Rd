@@ -12,10 +12,11 @@
 \usage{
 ''Grid(id=NULL, allowedPageSizes=NULL, columnChooserIsEnabled=NULL,
 columns=NULL, dataSource=NULL, defaultPageSize=NULL,
-exportIsEnabled=NULL, filterRowIsEnabled=NULL,
-headerFilterIsEnabled=NULL, keyExpr=NULL,
-pageSizeSelectorIsEnabled=NULL, searchPanelIsEnabled=NULL,
-selected_rows=NULL, selectionMode=NULL, sortingMode=NULL)
+defaultSelectedRowKeys=NULL, exportIsEnabled=NULL,
+filterRowIsEnabled=NULL, headerFilterIsEnabled=NULL,
+keyExpr=NULL, pageSizeSelectorIsEnabled=NULL,
+searchPanelIsEnabled=NULL, selected_rows=NULL,
+selectionMode=NULL, sortingMode=NULL)
 }
 
 \arguments{
@@ -33,6 +34,8 @@ Ex : [{}]}
 \item{dataSource}{Unnamed list. An key,value array of data to be displayed in the datagrid}
 
 \item{defaultPageSize}{Numeric. The number of items by page.}
+
+\item{defaultSelectedRowKeys}{Unnamed list. The array of default selected row keys id.}
 
 \item{exportIsEnabled}{Logical. enable dataGrid export to Excel (true|false).}
 

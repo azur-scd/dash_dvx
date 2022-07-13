@@ -7,7 +7,7 @@ import TreeList, {
 export default class List extends Component {
 
   render() {
-    const { id, dataSource, keyExpr, parentIdExpr, columns, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
+    const { id, dataSource, keyExpr, parentIdExpr, defaultSelectedRowKeys, columns, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
     return (
       <TreeList
         id={id}
@@ -19,6 +19,7 @@ export default class List extends Component {
         showBorders={true}
         columnAutoWidth={true}
         wordWrapEnabled={true}
+        defaultSelectedRowKeys={defaultSelectedRowKeys}
         selected_rows={selected_rows}
         onSelectionChanged={(e) => {
           const data = e.component.getSelectedRowsData(selectionMode);
@@ -79,6 +80,13 @@ List.propTypes = {
   * Ex : [{}]
   */
   columns: PropTypes.array,
+  /**
+  * The array of default selected row keys id.
+  */
+  defaultSelectedRowKeys: PropTypes.array,
+  /**
+   * Enables auto expand the tree
+   */
   autoExpandAll: PropTypes.bool,
   /**
    * Enables the paging of results
