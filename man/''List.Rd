@@ -12,12 +12,13 @@
 \usage{
 ''List(id=NULL, allowedPageSizes=NULL, autoExpandAll=NULL,
 columnChooserIsEnabled=NULL, columns=NULL, dataSource=NULL,
-defaultPageSize=NULL, filterRowIsEnabled=NULL,
-headerFilterIsEnabled=NULL, keyExpr=NULL,
-pageSizeSelectorIsEnabled=NULL, pagingIsEnabled=NULL,
-parentIdExpr=NULL, searchPanelIsEnabled=NULL,
-selected_rows=NULL, selectionIsRecursive=NULL,
-selectionMode=NULL, sortingMode=NULL)
+defaultPageSize=NULL, defaultSelectedRowKeys=NULL,
+filterRowIsEnabled=NULL, headerFilterIsEnabled=NULL,
+keyExpr=NULL, pageSizeSelectorIsEnabled=NULL,
+pagingIsEnabled=NULL, parentIdExpr=NULL,
+searchPanelIsEnabled=NULL, selected_rows=NULL,
+selectionIsRecursive=NULL, selectionMode=NULL,
+sortingMode=NULL)
 }
 
 \arguments{
@@ -25,7 +26,7 @@ selectionMode=NULL, sortingMode=NULL)
 
 \item{allowedPageSizes}{Unnamed list. Array of possible page size numbers}
 
-\item{autoExpandAll}{Logical. }
+\item{autoExpandAll}{Logical. Enables auto expand the tree}
 
 \item{columnChooserIsEnabled}{Logical. Enables dataGrid column chooser widget (true|false).}
 
@@ -37,6 +38,8 @@ Ex : [{}]}
 \item{dataSource}{Unnamed list. An key,value array of data to be displayed in the datagrid}
 
 \item{defaultPageSize}{Numeric. The number of items by page.}
+
+\item{defaultSelectedRowKeys}{Unnamed list. The array of default selected row keys id.}
 
 \item{filterRowIsEnabled}{Logical. Displays a filter search line under each column's label in teh datagrid (true|false).}
 

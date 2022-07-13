@@ -30,6 +30,9 @@ Keyword arguments:
 - defaultPageSize (number; default 10):
     The number of items by page.
 
+- defaultSelectedRowKeys (list; optional):
+    The array of default selected row keys id.
+
 - exportIsEnabled (boolean; default True):
     enable dataGrid export to Excel (True|False).
 
@@ -60,12 +63,12 @@ Keyword arguments:
 - sortingMode (string; default "multiple"):
     The type of sorting data (multiple|single)."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, columns=Component.UNDEFINED, keyExpr=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, exportIsEnabled=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'allowedPageSizes', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'exportIsEnabled', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'searchPanelIsEnabled', 'selected_rows', 'selectionMode', 'sortingMode']
+    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, columns=Component.UNDEFINED, keyExpr=Component.UNDEFINED, defaultSelectedRowKeys=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, exportIsEnabled=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'allowedPageSizes', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'exportIsEnabled', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'searchPanelIsEnabled', 'selected_rows', 'selectionMode', 'sortingMode']
         self._type = 'Grid'
         self._namespace = 'dash_dvx'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'allowedPageSizes', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'exportIsEnabled', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'searchPanelIsEnabled', 'selected_rows', 'selectionMode', 'sortingMode']
+        self.available_properties = ['id', 'allowedPageSizes', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'exportIsEnabled', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'searchPanelIsEnabled', 'selected_rows', 'selectionMode', 'sortingMode']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './AppList';
+import App from './AppGrid';
 
 ReactDOM.render(<App />, document.getElementById('root'));

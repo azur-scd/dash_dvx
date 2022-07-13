@@ -4,6 +4,7 @@ import { List } from '../lib';
 import { tasks } from './data_example_list.js';
 
 const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
+const selectedRowKeys = [28,32]
 
 class App extends Component {
 
@@ -13,6 +14,7 @@ class App extends Component {
             dataSource: tasks,
             keyExpr: "Task_ID",
             parentIdExpr: "Task_Parent_ID",
+            defaultSelectedRowKeys: selectedRowKeys,
             columns: columns,
             selected_rows:[]
         };
@@ -32,6 +34,7 @@ class App extends Component {
                      dataSource={this.state.dataSource}
                      keyExpr={this.state.keyExpr}
                      parentIdExpr={this.state.parentIdExpr}
+                     defaultSelectedRowKeys={this.state.defaultSelectedRowKeys}
                      defaultColumns={this.state.columns}  
                      selected_rows={this.state.selected_rows}  
                      setProps={this.setProps}               

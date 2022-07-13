@@ -10,7 +10,7 @@ import { exportDataGrid } from 'devextreme/excel_exporter';
 export default class Grid extends Component {
 
   render() {
-    const { id, dataSource, columns, keyExpr, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selected_rows, exportIsEnabled, setProps } = this.props;
+    const { id, dataSource, columns, keyExpr, defaultSelectedRowKeys, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selected_rows, exportIsEnabled, setProps } = this.props;
     return (
       <DataGrid
         id={id}
@@ -20,6 +20,7 @@ export default class Grid extends Component {
         columnAutoWidth={true}
         wordWrapEnabled={true}
         showBorders={true}
+        defaultSelectedRowKeys={defaultSelectedRowKeys}
         selected_rows={selected_rows}
         onSelectionChanged={(selectedRowsData) => {
           const data = selectedRowsData["selectedRowsData"];
@@ -92,6 +93,10 @@ Grid.propTypes = {
   * The dataField to be used as index|key.
   */
   keyExpr: PropTypes.string,
+  /**
+  * The array of default selected row keys id.
+  */
+   defaultSelectedRowKeys: PropTypes.array,
   /**
    * The number of items by page.
    */
