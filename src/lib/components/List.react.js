@@ -7,7 +7,7 @@ import TreeList, {
 export default class List extends Component {
 
   render() {
-    const { id, dataSource, keyExpr, parentIdExpr, defaultSelectedRowKeys, columns, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
+    const { id, dataSource, keyExpr, parentIdExpr, default_selected_row_keys, columns, autoExpandAll, pagingIsEnabled, defaultPageSize, pageSizeSelectorIsEnabled, allowedPageSizes, sortingMode, searchPanelIsEnabled, headerFilterIsEnabled, filterRowIsEnabled, columnChooserIsEnabled, selectionMode, selectionIsRecursive, selected_rows, setProps } = this.props;
     return (
       <TreeList
         id={id}
@@ -19,11 +19,13 @@ export default class List extends Component {
         showBorders={true}
         columnAutoWidth={true}
         wordWrapEnabled={true}
-        defaultSelectedRowKeys={defaultSelectedRowKeys}
+        defaultSelectedRowKeys={default_selected_row_keys}
+        default_selected_row_keys={default_selected_row_keys}
         selected_rows={selected_rows}
         onSelectionChanged={(e) => {
           const data = e.component.getSelectedRowsData(selectionMode);
           setProps({ selected_rows: data })
+          setProps({default_selected_row_keys: data.map(x=>x[`${keyExpr}`])})
         }}
         onExporting={this.onExporting}
       >
@@ -52,7 +54,7 @@ export default class List extends Component {
   }
 }
 
-List.defaultProps = { autoExpandAll: true, pagingIsEnabled: true, defaultPageSize: 10, pageSizeSelectorIsEnabled: false, sortingMode: "multiple", searchPanelIsEnabled: true, headerFilterIsEnabled: true, filterRowIsEnabled: true, columnChooserIsEnabled: false, selectionMode: 'leavesOnly', selectionIsRecursive: true, selected_rows: [] };
+List.defaultProps = { autoExpandAll: true, pagingIsEnabled: true, defaultPageSize: 10, pageSizeSelectorIsEnabled: false, sortingMode: "multiple", searchPanelIsEnabled: true, headerFilterIsEnabled: true, filterRowIsEnabled: true, columnChooserIsEnabled: false, selectionMode: 'leavesOnly', selectionIsRecursive: true, selected_rows: [], defaultSelectedRowKeys: [], default_selected_row_keys: [] };
 List.propTypes = {
   /**
    * The ID used to identify this component in Dash callbacks.
@@ -70,6 +72,10 @@ List.propTypes = {
   * The dataField to be used as the key to loop on to display the unflattes list.
   */
   parentIdExpr: PropTypes.string.isRequired,
+    /**
+  * The array of default selected row keys id.
+  */
+     defaultSelectedRowKeys: PropTypes.array,
   /**
    * Deploys the item hierarchy (true|false)
    */
@@ -80,10 +86,6 @@ List.propTypes = {
   * Ex : [{}]
   */
   columns: PropTypes.array,
-  /**
-  * The array of default selected row keys id.
-  */
-  defaultSelectedRowKeys: PropTypes.array,
   /**
    * Enables auto expand the tree
    */
@@ -136,6 +138,10 @@ List.propTypes = {
   * Array of selected items.
   */
   selected_rows: PropTypes.array,
+  /**
+  * Array of selected items in UI.
+  */
+   default_selected_row_keys: PropTypes.array,
   /**
    * Dash-assigned callback that should be called to report property changes
    * to Dash, to make them available for callbacks.

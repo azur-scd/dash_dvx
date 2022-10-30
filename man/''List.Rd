@@ -13,12 +13,12 @@
 ''List(id=NULL, allowedPageSizes=NULL, autoExpandAll=NULL,
 columnChooserIsEnabled=NULL, columns=NULL, dataSource=NULL,
 defaultPageSize=NULL, defaultSelectedRowKeys=NULL,
-filterRowIsEnabled=NULL, headerFilterIsEnabled=NULL,
-keyExpr=NULL, pageSizeSelectorIsEnabled=NULL,
-pagingIsEnabled=NULL, parentIdExpr=NULL,
-searchPanelIsEnabled=NULL, selected_rows=NULL,
-selectionIsRecursive=NULL, selectionMode=NULL,
-sortingMode=NULL)
+default_selected_row_keys=NULL, filterRowIsEnabled=NULL,
+headerFilterIsEnabled=NULL, keyExpr=NULL,
+pageSizeSelectorIsEnabled=NULL, pagingIsEnabled=NULL,
+parentIdExpr=NULL, searchPanelIsEnabled=NULL,
+selected_rows=NULL, selectionIsRecursive=NULL,
+selectionMode=NULL, sortingMode=NULL)
 }
 
 \arguments{
@@ -40,6 +40,8 @@ Ex : [{}]}
 \item{defaultPageSize}{Numeric. The number of items by page.}
 
 \item{defaultSelectedRowKeys}{Unnamed list. The array of default selected row keys id.}
+
+\item{default_selected_row_keys}{Unnamed list. Array of selected items in UI.}
 
 \item{filterRowIsEnabled}{Logical. Displays a filter search line under each column's label in teh datagrid (true|false).}
 

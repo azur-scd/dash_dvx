@@ -250,19 +250,23 @@
         "required": true,
         "description": "The dataField to be used as the key to loop on to display the unflattes list."
       },
+      "defaultSelectedRowKeys": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "The array of default selected row keys id.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
       "columns": {
         "type": {
           "name": "array"
         },
         "required": false,
         "description": "An array of columns config.\r\nObligatory fields are : dataField (same as the dataSource array key), caption (the displayed column label)\r\nOptionally fields are : width (number|auto), dataType (date|)\r\nEx : [{}]"
-      },
-      "defaultSelectedRowKeys": {
-        "type": {
-          "name": "array"
-        },
-        "required": false,
-        "description": "The array of default selected row keys id."
       },
       "autoExpandAll": {
         "type": {
@@ -398,6 +402,17 @@
         },
         "required": false,
         "description": "Array of selected items.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "default_selected_row_keys": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Array of selected items in UI.",
         "defaultValue": {
           "value": "[]",
           "computed": false

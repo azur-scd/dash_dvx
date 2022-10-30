@@ -36,6 +36,9 @@ Keyword arguments:
 - defaultSelectedRowKeys (list; optional):
     The array of default selected row keys id.
 
+- default_selected_row_keys (list; optional):
+    Array of selected items in UI.
+
 - filterRowIsEnabled (boolean; default True):
     Displays a filter search line under each column's label in teh
     datagrid (True|False).
@@ -74,12 +77,12 @@ Keyword arguments:
 - sortingMode (string; default "multiple"):
     The type of sorting data (multiple|single)."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, keyExpr=Component.REQUIRED, parentIdExpr=Component.REQUIRED, columns=Component.UNDEFINED, defaultSelectedRowKeys=Component.UNDEFINED, autoExpandAll=Component.UNDEFINED, pagingIsEnabled=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionIsRecursive=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
+    def __init__(self, id=Component.UNDEFINED, dataSource=Component.REQUIRED, keyExpr=Component.REQUIRED, parentIdExpr=Component.REQUIRED, defaultSelectedRowKeys=Component.UNDEFINED, columns=Component.UNDEFINED, autoExpandAll=Component.UNDEFINED, pagingIsEnabled=Component.UNDEFINED, defaultPageSize=Component.UNDEFINED, pageSizeSelectorIsEnabled=Component.UNDEFINED, allowedPageSizes=Component.UNDEFINED, sortingMode=Component.UNDEFINED, searchPanelIsEnabled=Component.UNDEFINED, headerFilterIsEnabled=Component.UNDEFINED, filterRowIsEnabled=Component.UNDEFINED, columnChooserIsEnabled=Component.UNDEFINED, selectionIsRecursive=Component.UNDEFINED, selectionMode=Component.UNDEFINED, selected_rows=Component.UNDEFINED, default_selected_row_keys=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'default_selected_row_keys', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
         self._type = 'List'
         self._namespace = 'dash_dvx'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
+        self.available_properties = ['id', 'allowedPageSizes', 'autoExpandAll', 'columnChooserIsEnabled', 'columns', 'dataSource', 'defaultPageSize', 'defaultSelectedRowKeys', 'default_selected_row_keys', 'filterRowIsEnabled', 'headerFilterIsEnabled', 'keyExpr', 'pageSizeSelectorIsEnabled', 'pagingIsEnabled', 'parentIdExpr', 'searchPanelIsEnabled', 'selected_rows', 'selectionIsRecursive', 'selectionMode', 'sortingMode']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
