@@ -152,6 +152,7 @@ app.layout =  html.Div(children=[
         keyExpr= "Task_ID",
         parentIdExpr= "Task_Parent_ID",
         defaultSelectedRowKeys = [8,9],
+        default_selected_row_keys = [8,9],
         selected_rows = [{
     "Task_ID": 8,
     "Task_Assigned_Employee_ID": 6,
@@ -181,6 +182,7 @@ app.layout =  html.Div(children=[
     html.H4("Selected data for the list"),
     html.P("(Only the child nodes of the selected items are returned, change selectionMode to 'all' if you want the parents nodes)"),
     html.Div(id='output_list'),
+    html.Div(id='output_list_default'),
      dvx.Filterbuilder(
         id="fbuilder", 
         fields=fields
@@ -198,11 +200,13 @@ def update_grid(selected_rows):
     return json.dumps(selected_rows)
 
 @app.callback(
-    Output('output_list', 'children'),
-    Input('list', 'selected_rows'),
+    [Output('output_list', 'children'),
+    Output('output_list_default', 'children'),],
+    [Input('list', 'selected_rows'),
+    Input('list', 'default_selected_row_keys'),]
 )
-def update_list(selected_rows):
-    return json.dumps(selected_rows)
+def update_list(selected_rows,default_selected_row_keys):
+    return json.dumps(selected_rows), json.dumps(default_selected_row_keys)
 
 @app.callback(
     Output('output_filterbuilder', 'children'),

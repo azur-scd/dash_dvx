@@ -48,7 +48,9 @@ app = dash.Dash(
 | columns      | Grid                  | (list of dicts) a list of the dictionary keys you want to be displayed           | Required     |
 | keyExpr      | Grid/List                  | (string) the unique key values to access data items           | Required      |
 | parentIdExpr | List | (string) the keys to loop on to create the nested list | Required |
-| defaultSelectedRowKeys | Grid/List | (array) the row keys to be checked by default |  |
+| default_selected_row_keys | List | (array) the row keys to be checked by default |  |
+| defaultSelectedRowKeys | Grid | (array) the row keys to be checked by default |  |
+| selected_row | Grid/List | (array) the row keys to be selected by default |  |
 | autoExpandAll      | list                  | (bool) Expand the tree by default           | Enabled by default      | True/False | True
 | defaultPageSize      | Grid                  | (int) number of items displayed by page           | Enabled by default      |  | 10
 | pagingIsEnabled      | List                  | (bool) splits records into multiple pages           | Enabled by default      | True/False  | True

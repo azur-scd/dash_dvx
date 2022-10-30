@@ -14,9 +14,10 @@ class App extends Component {
             dataSource: tasks,
             keyExpr: "Task_ID",
             parentIdExpr: "Task_Parent_ID",
-            defaultSelectedRowKeys: selectedRowKeys,
+            default_selected_row_keys: selectedRowKeys,
             columns: columns,
-            selected_rows:[]
+            selected_rows:[],
+
         };
         this.setProps = this.setProps.bind(this);
     }
@@ -34,9 +35,10 @@ class App extends Component {
                      dataSource={this.state.dataSource}
                      keyExpr={this.state.keyExpr}
                      parentIdExpr={this.state.parentIdExpr}
-                     defaultSelectedRowKeys={this.state.defaultSelectedRowKeys}
+                     defaultSelectedRowKeys={this.state.default_selected_row_keys}
                      defaultColumns={this.state.columns}  
                      selected_rows={this.state.selected_rows}  
+                     default_selected_row_keys={this.state.default_selected_row_keys}
                      setProps={this.setProps}               
                 />
             </div>
