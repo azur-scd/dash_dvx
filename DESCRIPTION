@@ -1,6 +1,6 @@
 Package: dashDvx
 Title: A simple wrapper for the Devextreme js library of components
-Version: 1.2.0
+Version: 1.3.0
 Description: A simple wrapper for the Devextreme js library of components
 Depends: R (>= 3.0.2)
 Imports: 

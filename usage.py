@@ -151,6 +151,28 @@ app.layout =  html.Div(children=[
         dataSource=data,
         keyExpr= "Task_ID",
         parentIdExpr= "Task_Parent_ID",
+        defaultSelectedRowKeys = [8,9],
+        selected_rows = [{
+    "Task_ID": 8,
+    "Task_Assigned_Employee_ID": 6,
+    "Task_Subject": 'Overtime',
+    "Task_Start_Date": '2015-06-10T00:00:00',
+    "Task_Due_Date": '2015-06-20T00:00:00',
+    "Task_Status": 'Completed',
+    "Task_Priority": 2,
+    "Task_Completion": 100,
+    "Task_Parent_ID": 2,
+  }, {
+    "Task_ID": 9,
+    "Task_Assigned_Employee_ID": 8,
+    "Task_Subject": 'Recall and Refund Forms',
+    "Task_Start_Date": '2015-06-17T00:00:00',
+    "Task_Due_Date": '2016-04-09T00:00:00',
+    "Task_Status": 'Completed',
+    "Task_Priority": 2,
+    "Task_Completion": 100,
+    "Task_Parent_ID": 1,
+  }],
         columns = ['Task_ID','Task_Subject', 'Task_Start_Date', 'Task_Status'],
         filterRowIsEnabled= False, #if you don't want the row filter undre the header
         columnChooserIsEnabled= True, #if you want to have the ability to show/hide columns in the UI
